@@ -1,0 +1,3 @@
+[submodule "CppUMockGen"]
+	path = CppUMockGen
+	url = https://github.com/jgonzalezdr/CppUMockGen.git
