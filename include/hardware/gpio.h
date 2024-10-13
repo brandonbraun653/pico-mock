@@ -13,35 +13,38 @@
 #define PICO_MOCK_GPIO_HPP
 
 #ifdef __cplusplus
-extern "C"
-{
+extern "C" {
 #endif
+
+/*-----------------------------------------------------------------------------
+Includes
+-----------------------------------------------------------------------------*/
 #include "pico.h"
 
 enum gpio_function {
-    GPIO_FUNC_XIP = 0,
-    GPIO_FUNC_SPI = 1,
-    GPIO_FUNC_UART = 2,
-    GPIO_FUNC_I2C = 3,
-    GPIO_FUNC_PWM = 4,
-    GPIO_FUNC_SIO = 5,
-    GPIO_FUNC_PIO0 = 6,
-    GPIO_FUNC_PIO1 = 7,
-    GPIO_FUNC_GPCK = 8,
-    GPIO_FUNC_USB = 9,
-    GPIO_FUNC_NULL = 0xf,
+  GPIO_FUNC_XIP = 0,
+  GPIO_FUNC_SPI = 1,
+  GPIO_FUNC_UART = 2,
+  GPIO_FUNC_I2C = 3,
+  GPIO_FUNC_PWM = 4,
+  GPIO_FUNC_SIO = 5,
+  GPIO_FUNC_PIO0 = 6,
+  GPIO_FUNC_PIO1 = 7,
+  GPIO_FUNC_GPCK = 8,
+  GPIO_FUNC_USB = 9,
+  GPIO_FUNC_NULL = 0xf,
 };
 
 enum gpio_slew_rate {
-    GPIO_SLEW_RATE_SLOW = 0,  ///< Slew rate limiting enabled
-    GPIO_SLEW_RATE_FAST = 1   ///< Slew rate limiting disabled
+  GPIO_SLEW_RATE_SLOW = 0, ///< Slew rate limiting enabled
+  GPIO_SLEW_RATE_FAST = 1  ///< Slew rate limiting disabled
 };
 
 enum gpio_drive_strength {
-    GPIO_DRIVE_STRENGTH_2MA = 0, ///< 2 mA nominal drive strength
-    GPIO_DRIVE_STRENGTH_4MA = 1, ///< 4 mA nominal drive strength
-    GPIO_DRIVE_STRENGTH_8MA = 2, ///< 8 mA nominal drive strength
-    GPIO_DRIVE_STRENGTH_12MA = 3 ///< 12 mA nominal drive strength
+  GPIO_DRIVE_STRENGTH_2MA = 0, ///< 2 mA nominal drive strength
+  GPIO_DRIVE_STRENGTH_4MA = 1, ///< 4 mA nominal drive strength
+  GPIO_DRIVE_STRENGTH_8MA = 2, ///< 8 mA nominal drive strength
+  GPIO_DRIVE_STRENGTH_12MA = 3 ///< 12 mA nominal drive strength
 };
 
 #define GPIO_OUT 1
@@ -86,4 +89,4 @@ void gpio_debug_pins_init();
 #ifdef __cplusplus
 }
 #endif
-#endif  /* !PICO_MOCK_GPIO_HPP */
+#endif /* !PICO_MOCK_GPIO_HPP */

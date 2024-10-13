@@ -28,6 +28,24 @@ Includes
 
 typedef unsigned int uint;
 
+/*! \typedef absolute_time_t
+    \brief An opaque 64 bit timestamp in microseconds
+
+    The type is used instead of a raw uint64_t to prevent accidentally passing relative times or times in the wrong
+    time units where an absolute time is required. It is equivalent to uint64_t in release builds.
+
+    \see to_us_since_boot()
+    \see update_us_since_boot()
+    \ingroup timestamp
+*/
+#ifdef NDEBUG
+typedef uint64_t absolute_time_t;
+#else
+typedef struct {
+    uint64_t _private_us_since_boot;
+} absolute_time_t;
+#endif
+
 
 #ifdef __cplusplus
 }
