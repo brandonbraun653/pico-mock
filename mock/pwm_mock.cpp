@@ -10,6 +10,141 @@ extern "C" {
 
 #include <CppUTestExt/MockSupport.h>
 
+pwm_config pwm_get_default_config()
+{
+    return *static_cast<const pwm_config*>(mock().actualCall("pwm_get_default_config").returnConstPointerValue());
+}
+
+uint pwm_get_dreq(uint slice_num)
+{
+    return static_cast<uint>(mock().actualCall("pwm_get_dreq").withUnsignedIntParameter("slice_num", slice_num).returnUnsignedIntValue());
+}
+
+uint pwm_gpio_to_channel(uint gpio)
+{
+    return static_cast<uint>(mock().actualCall("pwm_gpio_to_channel").withUnsignedIntParameter("gpio", gpio).returnUnsignedIntValue());
+}
+
+uint pwm_gpio_to_slice_num(uint gpio)
+{
+    return static_cast<uint>(mock().actualCall("pwm_gpio_to_slice_num").withUnsignedIntParameter("gpio", gpio).returnUnsignedIntValue());
+}
+
+uint16_t pwm_get_counter(uint slice_num)
+{
+    return static_cast<uint16_t>(mock().actualCall("pwm_get_counter").withUnsignedIntParameter("slice_num", slice_num).returnUnsignedIntValue());
+}
+
+uint32_t pwm_get_irq_status_mask()
+{
+    return static_cast<uint32_t>(mock().actualCall("pwm_get_irq_status_mask").returnUnsignedIntValue());
+}
+
+void check_slice_num_param(uint slice_num)
+{
+    mock().actualCall("check_slice_num_param").withUnsignedIntParameter("slice_num", slice_num);
+}
+
+void pwm_advance_count(uint slice_num)
+{
+    mock().actualCall("pwm_advance_count").withUnsignedIntParameter("slice_num", slice_num);
+}
+
+void pwm_clear_irq(uint slice_num)
+{
+    mock().actualCall("pwm_clear_irq").withUnsignedIntParameter("slice_num", slice_num);
+}
+
+void pwm_config_set_clkdiv(pwm_config * c, float div)
+{
+    mock().actualCall("pwm_config_set_clkdiv").withOutputParameterOfType("pwm_config", "c", c).withDoubleParameter("div", div);
+}
+
+void pwm_config_set_clkdiv_int(pwm_config * c, uint div)
+{
+    mock().actualCall("pwm_config_set_clkdiv_int").withOutputParameterOfType("pwm_config", "c", c).withUnsignedIntParameter("div", div);
+}
+
+void pwm_config_set_clkdiv_int_frac(pwm_config * c, uint8_t integer, uint8_t fract)
+{
+    mock().actualCall("pwm_config_set_clkdiv_int_frac").withOutputParameterOfType("pwm_config", "c", c).withUnsignedIntParameter("integer", integer).withUnsignedIntParameter("fract", fract);
+}
+
+void pwm_config_set_clkdiv_mode(pwm_config * c, enum pwm_clkdiv_mode mode)
+{
+    mock().actualCall("pwm_config_set_clkdiv_mode").withOutputParameterOfType("pwm_config", "c", c).withIntParameter("mode", static_cast<int>(mode));
+}
+
+void pwm_config_set_output_polarity(pwm_config * c, _Bool a, _Bool b)
+{
+    mock().actualCall("pwm_config_set_output_polarity").withOutputParameterOfType("pwm_config", "c", c).withBoolParameter("a", a).withBoolParameter("b", b);
+}
+
+void pwm_config_set_phase_correct(pwm_config * c, _Bool phase_correct)
+{
+    mock().actualCall("pwm_config_set_phase_correct").withOutputParameterOfType("pwm_config", "c", c).withBoolParameter("phase_correct", phase_correct);
+}
+
+void pwm_config_set_wrap(pwm_config * c, uint16_t wrap)
+{
+    mock().actualCall("pwm_config_set_wrap").withOutputParameterOfType("pwm_config", "c", c).withUnsignedIntParameter("wrap", wrap);
+}
+
+void pwm_force_irq(uint slice_num)
+{
+    mock().actualCall("pwm_force_irq").withUnsignedIntParameter("slice_num", slice_num);
+}
+
+void pwm_init(uint slice_num, pwm_config * c, _Bool start)
+{
+    mock().actualCall("pwm_init").withUnsignedIntParameter("slice_num", slice_num).withOutputParameterOfType("pwm_config", "c", c).withBoolParameter("start", start);
+}
+
+void pwm_retard_count(uint slice_num)
+{
+    mock().actualCall("pwm_retard_count").withUnsignedIntParameter("slice_num", slice_num);
+}
+
+void pwm_set_both_levels(uint slice_num, uint16_t level_a, uint16_t level_b)
+{
+    mock().actualCall("pwm_set_both_levels").withUnsignedIntParameter("slice_num", slice_num).withUnsignedIntParameter("level_a", level_a).withUnsignedIntParameter("level_b", level_b);
+}
+
+void pwm_set_chan_level(uint slice_num, uint chan, uint16_t level)
+{
+    mock().actualCall("pwm_set_chan_level").withUnsignedIntParameter("slice_num", slice_num).withUnsignedIntParameter("chan", chan).withUnsignedIntParameter("level", level);
+}
+
+void pwm_set_clkdiv(uint slice_num, float divider)
+{
+    mock().actualCall("pwm_set_clkdiv").withUnsignedIntParameter("slice_num", slice_num).withDoubleParameter("divider", divider);
+}
+
+void pwm_set_clkdiv_int_frac(uint slice_num, uint8_t integer, uint8_t fract)
+{
+    mock().actualCall("pwm_set_clkdiv_int_frac").withUnsignedIntParameter("slice_num", slice_num).withUnsignedIntParameter("integer", integer).withUnsignedIntParameter("fract", fract);
+}
+
+void pwm_set_clkdiv_mode(uint slice_num, enum pwm_clkdiv_mode mode)
+{
+    mock().actualCall("pwm_set_clkdiv_mode").withUnsignedIntParameter("slice_num", slice_num).withIntParameter("mode", static_cast<int>(mode));
+}
+
+void pwm_set_counter(uint slice_num, uint16_t c)
+{
+    mock().actualCall("pwm_set_counter").withUnsignedIntParameter("slice_num", slice_num).withUnsignedIntParameter("c", c);
+}
+
+void pwm_set_enabled(uint slice_num, _Bool enabled)
+{
+    mock().actualCall("pwm_set_enabled").withUnsignedIntParameter("slice_num", slice_num).withBoolParameter("enabled", enabled);
+}
+
+void pwm_set_gpio_level(uint gpio, uint16_t level)
+{
+    mock().actualCall("pwm_set_gpio_level").withUnsignedIntParameter("gpio", gpio).withUnsignedIntParameter("level", level);
+}
+
 void pwm_set_irq_enabled(uint slice_num, _Bool enabled)
 {
     mock().actualCall("pwm_set_irq_enabled").withUnsignedIntParameter("slice_num", slice_num).withBoolParameter("enabled", enabled);
@@ -20,23 +155,23 @@ void pwm_set_irq_mask_enabled(uint32_t slice_mask, _Bool enabled)
     mock().actualCall("pwm_set_irq_mask_enabled").withUnsignedIntParameter("slice_mask", slice_mask).withBoolParameter("enabled", enabled);
 }
 
-void pwm_clear_irq(uint slice_num)
+void pwm_set_mask_enabled(uint32_t mask)
 {
-    mock().actualCall("pwm_clear_irq").withUnsignedIntParameter("slice_num", slice_num);
+    mock().actualCall("pwm_set_mask_enabled").withUnsignedIntParameter("mask", mask);
 }
 
-uint32_t pwm_get_irq_status_mask()
+void pwm_set_output_polarity(uint slice_num, _Bool a, _Bool b)
 {
-    return static_cast<uint32_t>(mock().actualCall("pwm_get_irq_status_mask").returnUnsignedIntValue());
+    mock().actualCall("pwm_set_output_polarity").withUnsignedIntParameter("slice_num", slice_num).withBoolParameter("a", a).withBoolParameter("b", b);
 }
 
-void pwm_force_irq(uint slice_num)
+void pwm_set_phase_correct(uint slice_num, _Bool phase_correct)
 {
-    mock().actualCall("pwm_force_irq").withUnsignedIntParameter("slice_num", slice_num);
+    mock().actualCall("pwm_set_phase_correct").withUnsignedIntParameter("slice_num", slice_num).withBoolParameter("phase_correct", phase_correct);
 }
 
-uint pwm_get_dreq(uint slice_num)
+void pwm_set_wrap(uint slice_num, uint16_t wrap)
 {
-    return static_cast<uint>(mock().actualCall("pwm_get_dreq").withUnsignedIntParameter("slice_num", slice_num).returnUnsignedIntValue());
+    mock().actualCall("pwm_set_wrap").withUnsignedIntParameter("slice_num", slice_num).withUnsignedIntParameter("wrap", wrap);
 }
 

@@ -7,13 +7,110 @@
 #include "adc_expect.hpp"
 
 namespace expect {
-MockExpectedCall& adc_init()
+MockExpectedCall& adc_fifo_is_empty(_Bool __return__)
 {
-    return adc_init(1);
+    return adc_fifo_is_empty(1, __return__);
 }
-MockExpectedCall& adc_init(unsigned int __numCalls__)
+MockExpectedCall& adc_fifo_is_empty(unsigned int __numCalls__, _Bool __return__)
 {
-    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "adc_init");
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "adc_fifo_is_empty");
+    __expectedCall__.andReturnValue(__return__);
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& adc_get_selected_input(uint __return__)
+{
+    return adc_get_selected_input(1, __return__);
+}
+MockExpectedCall& adc_get_selected_input(unsigned int __numCalls__, uint __return__)
+{
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "adc_get_selected_input");
+    __expectedCall__.andReturnValue(static_cast<unsigned int>(__return__));
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& adc_fifo_get(uint16_t __return__)
+{
+    return adc_fifo_get(1, __return__);
+}
+MockExpectedCall& adc_fifo_get(unsigned int __numCalls__, uint16_t __return__)
+{
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "adc_fifo_get");
+    __expectedCall__.andReturnValue(static_cast<unsigned int>(__return__));
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& adc_fifo_get_blocking(uint16_t __return__)
+{
+    return adc_fifo_get_blocking(1, __return__);
+}
+MockExpectedCall& adc_fifo_get_blocking(unsigned int __numCalls__, uint16_t __return__)
+{
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "adc_fifo_get_blocking");
+    __expectedCall__.andReturnValue(static_cast<unsigned int>(__return__));
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& adc_read(uint16_t __return__)
+{
+    return adc_read(1, __return__);
+}
+MockExpectedCall& adc_read(unsigned int __numCalls__, uint16_t __return__)
+{
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "adc_read");
+    __expectedCall__.andReturnValue(static_cast<unsigned int>(__return__));
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& adc_fifo_get_level(uint8_t __return__)
+{
+    return adc_fifo_get_level(1, __return__);
+}
+MockExpectedCall& adc_fifo_get_level(unsigned int __numCalls__, uint8_t __return__)
+{
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "adc_fifo_get_level");
+    __expectedCall__.andReturnValue(static_cast<unsigned int>(__return__));
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& adc_fifo_drain()
+{
+    return adc_fifo_drain(1);
+}
+MockExpectedCall& adc_fifo_drain(unsigned int __numCalls__)
+{
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "adc_fifo_drain");
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& adc_fifo_setup(CppUMockGen::Parameter<_Bool> en, CppUMockGen::Parameter<_Bool> dreq_en, CppUMockGen::Parameter<uint16_t> dreq_thresh, CppUMockGen::Parameter<_Bool> err_in_fifo, CppUMockGen::Parameter<_Bool> byte_shift)
+{
+    return adc_fifo_setup(1, en, dreq_en, dreq_thresh, err_in_fifo, byte_shift);
+}
+MockExpectedCall& adc_fifo_setup(unsigned int __numCalls__, CppUMockGen::Parameter<_Bool> en, CppUMockGen::Parameter<_Bool> dreq_en, CppUMockGen::Parameter<uint16_t> dreq_thresh, CppUMockGen::Parameter<_Bool> err_in_fifo, CppUMockGen::Parameter<_Bool> byte_shift)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "adc_fifo_setup");
+    if(en.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withBoolParameter("en", en.getValue()); }
+    if(dreq_en.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withBoolParameter("dreq_en", dreq_en.getValue()); }
+    if(dreq_thresh.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("dreq_thresh", dreq_thresh.getValue()); }
+    if(err_in_fifo.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withBoolParameter("err_in_fifo", err_in_fifo.getValue()); }
+    if(byte_shift.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withBoolParameter("byte_shift", byte_shift.getValue()); }
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
     return __expectedCall__;
 }
 }
@@ -28,6 +125,48 @@ MockExpectedCall& adc_gpio_init(unsigned int __numCalls__, CppUMockGen::Paramete
     bool __ignoreOtherParams__ = false;
     MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "adc_gpio_init");
     if(gpio.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("gpio", gpio.getValue()); }
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& adc_init()
+{
+    return adc_init(1);
+}
+MockExpectedCall& adc_init(unsigned int __numCalls__)
+{
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "adc_init");
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& adc_irq_set_enabled(CppUMockGen::Parameter<_Bool> enabled)
+{
+    return adc_irq_set_enabled(1, enabled);
+}
+MockExpectedCall& adc_irq_set_enabled(unsigned int __numCalls__, CppUMockGen::Parameter<_Bool> enabled)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "adc_irq_set_enabled");
+    if(enabled.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withBoolParameter("enabled", enabled.getValue()); }
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& adc_run(CppUMockGen::Parameter<_Bool> run)
+{
+    return adc_run(1, run);
+}
+MockExpectedCall& adc_run(unsigned int __numCalls__, CppUMockGen::Parameter<_Bool> run)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "adc_run");
+    if(run.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withBoolParameter("run", run.getValue()); }
     if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
     return __expectedCall__;
 }
@@ -49,14 +188,46 @@ MockExpectedCall& adc_select_input(unsigned int __numCalls__, CppUMockGen::Param
 }
 
 namespace expect {
-MockExpectedCall& adc_read(uint16_t __return__)
+MockExpectedCall& adc_set_clkdiv(CppUMockGen::Parameter<float> clkdiv)
 {
-    return adc_read(1, __return__);
+    return adc_set_clkdiv(1, clkdiv);
 }
-MockExpectedCall& adc_read(unsigned int __numCalls__, uint16_t __return__)
+MockExpectedCall& adc_set_clkdiv(unsigned int __numCalls__, CppUMockGen::Parameter<float> clkdiv)
 {
-    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "adc_read");
-    __expectedCall__.andReturnValue(static_cast<unsigned int>(__return__));
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "adc_set_clkdiv");
+    if(clkdiv.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withDoubleParameter("clkdiv", clkdiv.getValue()); }
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& adc_set_round_robin(CppUMockGen::Parameter<uint> input_mask)
+{
+    return adc_set_round_robin(1, input_mask);
+}
+MockExpectedCall& adc_set_round_robin(unsigned int __numCalls__, CppUMockGen::Parameter<uint> input_mask)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "adc_set_round_robin");
+    if(input_mask.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("input_mask", input_mask.getValue()); }
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& adc_set_temp_sensor_enabled(CppUMockGen::Parameter<_Bool> enable)
+{
+    return adc_set_temp_sensor_enabled(1, enable);
+}
+MockExpectedCall& adc_set_temp_sensor_enabled(unsigned int __numCalls__, CppUMockGen::Parameter<_Bool> enable)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "adc_set_temp_sensor_enabled");
+    if(enable.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withBoolParameter("enable", enable.getValue()); }
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
     return __expectedCall__;
 }
 }

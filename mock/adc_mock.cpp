@@ -10,9 +10,44 @@ extern "C" {
 
 #include <CppUTestExt/MockSupport.h>
 
-void adc_init()
+_Bool adc_fifo_is_empty()
 {
-    mock().actualCall("adc_init");
+    return mock().actualCall("adc_fifo_is_empty").returnBoolValue();
+}
+
+uint adc_get_selected_input()
+{
+    return static_cast<uint>(mock().actualCall("adc_get_selected_input").returnUnsignedIntValue());
+}
+
+uint16_t adc_fifo_get()
+{
+    return static_cast<uint16_t>(mock().actualCall("adc_fifo_get").returnUnsignedIntValue());
+}
+
+uint16_t adc_fifo_get_blocking()
+{
+    return static_cast<uint16_t>(mock().actualCall("adc_fifo_get_blocking").returnUnsignedIntValue());
+}
+
+uint16_t adc_read()
+{
+    return static_cast<uint16_t>(mock().actualCall("adc_read").returnUnsignedIntValue());
+}
+
+uint8_t adc_fifo_get_level()
+{
+    return static_cast<uint8_t>(mock().actualCall("adc_fifo_get_level").returnUnsignedIntValue());
+}
+
+void adc_fifo_drain()
+{
+    mock().actualCall("adc_fifo_drain");
+}
+
+void adc_fifo_setup(_Bool en, _Bool dreq_en, uint16_t dreq_thresh, _Bool err_in_fifo, _Bool byte_shift)
+{
+    mock().actualCall("adc_fifo_setup").withBoolParameter("en", en).withBoolParameter("dreq_en", dreq_en).withUnsignedIntParameter("dreq_thresh", dreq_thresh).withBoolParameter("err_in_fifo", err_in_fifo).withBoolParameter("byte_shift", byte_shift);
 }
 
 void adc_gpio_init(uint gpio)
@@ -20,13 +55,38 @@ void adc_gpio_init(uint gpio)
     mock().actualCall("adc_gpio_init").withUnsignedIntParameter("gpio", gpio);
 }
 
+void adc_init()
+{
+    mock().actualCall("adc_init");
+}
+
+void adc_irq_set_enabled(_Bool enabled)
+{
+    mock().actualCall("adc_irq_set_enabled").withBoolParameter("enabled", enabled);
+}
+
+void adc_run(_Bool run)
+{
+    mock().actualCall("adc_run").withBoolParameter("run", run);
+}
+
 void adc_select_input(uint input)
 {
     mock().actualCall("adc_select_input").withUnsignedIntParameter("input", input);
 }
 
-uint16_t adc_read()
+void adc_set_clkdiv(float clkdiv)
 {
-    return static_cast<uint16_t>(mock().actualCall("adc_read").returnUnsignedIntValue());
+    mock().actualCall("adc_set_clkdiv").withDoubleParameter("clkdiv", clkdiv);
+}
+
+void adc_set_round_robin(uint input_mask)
+{
+    mock().actualCall("adc_set_round_robin").withUnsignedIntParameter("input_mask", input_mask);
+}
+
+void adc_set_temp_sensor_enabled(_Bool enable)
+{
+    mock().actualCall("adc_set_temp_sensor_enabled").withBoolParameter("enable", enable);
 }
 

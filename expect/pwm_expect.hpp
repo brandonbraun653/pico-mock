@@ -13,6 +13,141 @@ extern "C" {
 #include <CppUTestExt/MockSupport.h>
 
 namespace expect {
+MockExpectedCall& pwm_get_default_config(pwm_config &__return__);
+MockExpectedCall& pwm_get_default_config(unsigned int __numCalls__, pwm_config &__return__);
+}
+
+namespace expect {
+MockExpectedCall& pwm_get_dreq(CppUMockGen::Parameter<uint> slice_num, uint __return__);
+MockExpectedCall& pwm_get_dreq(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num, uint __return__);
+}
+
+namespace expect {
+MockExpectedCall& pwm_gpio_to_channel(CppUMockGen::Parameter<uint> gpio, uint __return__);
+MockExpectedCall& pwm_gpio_to_channel(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, uint __return__);
+}
+
+namespace expect {
+MockExpectedCall& pwm_gpio_to_slice_num(CppUMockGen::Parameter<uint> gpio, uint __return__);
+MockExpectedCall& pwm_gpio_to_slice_num(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, uint __return__);
+}
+
+namespace expect {
+MockExpectedCall& pwm_get_counter(CppUMockGen::Parameter<uint> slice_num, uint16_t __return__);
+MockExpectedCall& pwm_get_counter(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num, uint16_t __return__);
+}
+
+namespace expect {
+MockExpectedCall& pwm_get_irq_status_mask(uint32_t __return__);
+MockExpectedCall& pwm_get_irq_status_mask(unsigned int __numCalls__, uint32_t __return__);
+}
+
+namespace expect {
+MockExpectedCall& check_slice_num_param(CppUMockGen::Parameter<uint> slice_num);
+MockExpectedCall& check_slice_num_param(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num);
+}
+
+namespace expect {
+MockExpectedCall& pwm_advance_count(CppUMockGen::Parameter<uint> slice_num);
+MockExpectedCall& pwm_advance_count(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num);
+}
+
+namespace expect {
+MockExpectedCall& pwm_clear_irq(CppUMockGen::Parameter<uint> slice_num);
+MockExpectedCall& pwm_clear_irq(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num);
+}
+
+namespace expect {
+MockExpectedCall& pwm_config_set_clkdiv(pwm_config * c, CppUMockGen::Parameter<float> div);
+MockExpectedCall& pwm_config_set_clkdiv(unsigned int __numCalls__, pwm_config * c, CppUMockGen::Parameter<float> div);
+}
+
+namespace expect {
+MockExpectedCall& pwm_config_set_clkdiv_int(pwm_config * c, CppUMockGen::Parameter<uint> div);
+MockExpectedCall& pwm_config_set_clkdiv_int(unsigned int __numCalls__, pwm_config * c, CppUMockGen::Parameter<uint> div);
+}
+
+namespace expect {
+MockExpectedCall& pwm_config_set_clkdiv_int_frac(pwm_config * c, CppUMockGen::Parameter<uint8_t> integer, CppUMockGen::Parameter<uint8_t> fract);
+MockExpectedCall& pwm_config_set_clkdiv_int_frac(unsigned int __numCalls__, pwm_config * c, CppUMockGen::Parameter<uint8_t> integer, CppUMockGen::Parameter<uint8_t> fract);
+}
+
+namespace expect {
+MockExpectedCall& pwm_config_set_clkdiv_mode(pwm_config * c, CppUMockGen::Parameter<enum pwm_clkdiv_mode> mode);
+MockExpectedCall& pwm_config_set_clkdiv_mode(unsigned int __numCalls__, pwm_config * c, CppUMockGen::Parameter<enum pwm_clkdiv_mode> mode);
+}
+
+namespace expect {
+MockExpectedCall& pwm_config_set_output_polarity(pwm_config * c, CppUMockGen::Parameter<_Bool> a, CppUMockGen::Parameter<_Bool> b);
+MockExpectedCall& pwm_config_set_output_polarity(unsigned int __numCalls__, pwm_config * c, CppUMockGen::Parameter<_Bool> a, CppUMockGen::Parameter<_Bool> b);
+}
+
+namespace expect {
+MockExpectedCall& pwm_config_set_phase_correct(pwm_config * c, CppUMockGen::Parameter<_Bool> phase_correct);
+MockExpectedCall& pwm_config_set_phase_correct(unsigned int __numCalls__, pwm_config * c, CppUMockGen::Parameter<_Bool> phase_correct);
+}
+
+namespace expect {
+MockExpectedCall& pwm_config_set_wrap(pwm_config * c, CppUMockGen::Parameter<uint16_t> wrap);
+MockExpectedCall& pwm_config_set_wrap(unsigned int __numCalls__, pwm_config * c, CppUMockGen::Parameter<uint16_t> wrap);
+}
+
+namespace expect {
+MockExpectedCall& pwm_force_irq(CppUMockGen::Parameter<uint> slice_num);
+MockExpectedCall& pwm_force_irq(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num);
+}
+
+namespace expect {
+MockExpectedCall& pwm_init(CppUMockGen::Parameter<uint> slice_num, pwm_config * c, CppUMockGen::Parameter<_Bool> start);
+MockExpectedCall& pwm_init(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num, pwm_config * c, CppUMockGen::Parameter<_Bool> start);
+}
+
+namespace expect {
+MockExpectedCall& pwm_retard_count(CppUMockGen::Parameter<uint> slice_num);
+MockExpectedCall& pwm_retard_count(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num);
+}
+
+namespace expect {
+MockExpectedCall& pwm_set_both_levels(CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<uint16_t> level_a, CppUMockGen::Parameter<uint16_t> level_b);
+MockExpectedCall& pwm_set_both_levels(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<uint16_t> level_a, CppUMockGen::Parameter<uint16_t> level_b);
+}
+
+namespace expect {
+MockExpectedCall& pwm_set_chan_level(CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<uint> chan, CppUMockGen::Parameter<uint16_t> level);
+MockExpectedCall& pwm_set_chan_level(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<uint> chan, CppUMockGen::Parameter<uint16_t> level);
+}
+
+namespace expect {
+MockExpectedCall& pwm_set_clkdiv(CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<float> divider);
+MockExpectedCall& pwm_set_clkdiv(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<float> divider);
+}
+
+namespace expect {
+MockExpectedCall& pwm_set_clkdiv_int_frac(CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<uint8_t> integer, CppUMockGen::Parameter<uint8_t> fract);
+MockExpectedCall& pwm_set_clkdiv_int_frac(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<uint8_t> integer, CppUMockGen::Parameter<uint8_t> fract);
+}
+
+namespace expect {
+MockExpectedCall& pwm_set_clkdiv_mode(CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<enum pwm_clkdiv_mode> mode);
+MockExpectedCall& pwm_set_clkdiv_mode(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<enum pwm_clkdiv_mode> mode);
+}
+
+namespace expect {
+MockExpectedCall& pwm_set_counter(CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<uint16_t> c);
+MockExpectedCall& pwm_set_counter(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<uint16_t> c);
+}
+
+namespace expect {
+MockExpectedCall& pwm_set_enabled(CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<_Bool> enabled);
+MockExpectedCall& pwm_set_enabled(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<_Bool> enabled);
+}
+
+namespace expect {
+MockExpectedCall& pwm_set_gpio_level(CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<uint16_t> level);
+MockExpectedCall& pwm_set_gpio_level(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<uint16_t> level);
+}
+
+namespace expect {
 MockExpectedCall& pwm_set_irq_enabled(CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<_Bool> enabled);
 MockExpectedCall& pwm_set_irq_enabled(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<_Bool> enabled);
 }
@@ -23,22 +158,22 @@ MockExpectedCall& pwm_set_irq_mask_enabled(unsigned int __numCalls__, CppUMockGe
 }
 
 namespace expect {
-MockExpectedCall& pwm_clear_irq(CppUMockGen::Parameter<uint> slice_num);
-MockExpectedCall& pwm_clear_irq(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num);
+MockExpectedCall& pwm_set_mask_enabled(CppUMockGen::Parameter<uint32_t> mask);
+MockExpectedCall& pwm_set_mask_enabled(unsigned int __numCalls__, CppUMockGen::Parameter<uint32_t> mask);
 }
 
 namespace expect {
-MockExpectedCall& pwm_get_irq_status_mask(uint32_t __return__);
-MockExpectedCall& pwm_get_irq_status_mask(unsigned int __numCalls__, uint32_t __return__);
+MockExpectedCall& pwm_set_output_polarity(CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<_Bool> a, CppUMockGen::Parameter<_Bool> b);
+MockExpectedCall& pwm_set_output_polarity(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<_Bool> a, CppUMockGen::Parameter<_Bool> b);
 }
 
 namespace expect {
-MockExpectedCall& pwm_force_irq(CppUMockGen::Parameter<uint> slice_num);
-MockExpectedCall& pwm_force_irq(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num);
+MockExpectedCall& pwm_set_phase_correct(CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<_Bool> phase_correct);
+MockExpectedCall& pwm_set_phase_correct(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<_Bool> phase_correct);
 }
 
 namespace expect {
-MockExpectedCall& pwm_get_dreq(CppUMockGen::Parameter<uint> slice_num, uint __return__);
-MockExpectedCall& pwm_get_dreq(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num, uint __return__);
+MockExpectedCall& pwm_set_wrap(CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<uint16_t> wrap);
+MockExpectedCall& pwm_set_wrap(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<uint16_t> wrap);
 }
 

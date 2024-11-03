@@ -7,6 +7,433 @@
 #include "pwm_expect.hpp"
 
 namespace expect {
+MockExpectedCall& pwm_get_default_config(pwm_config &__return__)
+{
+    return pwm_get_default_config(1, __return__);
+}
+MockExpectedCall& pwm_get_default_config(unsigned int __numCalls__, pwm_config &__return__)
+{
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_get_default_config");
+    __expectedCall__.andReturnValue(static_cast<const void*>(&__return__));
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& pwm_get_dreq(CppUMockGen::Parameter<uint> slice_num, uint __return__)
+{
+    return pwm_get_dreq(1, slice_num, __return__);
+}
+MockExpectedCall& pwm_get_dreq(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num, uint __return__)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_get_dreq");
+    if(slice_num.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("slice_num", slice_num.getValue()); }
+    __expectedCall__.andReturnValue(static_cast<unsigned int>(__return__));
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& pwm_gpio_to_channel(CppUMockGen::Parameter<uint> gpio, uint __return__)
+{
+    return pwm_gpio_to_channel(1, gpio, __return__);
+}
+MockExpectedCall& pwm_gpio_to_channel(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, uint __return__)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_gpio_to_channel");
+    if(gpio.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("gpio", gpio.getValue()); }
+    __expectedCall__.andReturnValue(static_cast<unsigned int>(__return__));
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& pwm_gpio_to_slice_num(CppUMockGen::Parameter<uint> gpio, uint __return__)
+{
+    return pwm_gpio_to_slice_num(1, gpio, __return__);
+}
+MockExpectedCall& pwm_gpio_to_slice_num(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, uint __return__)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_gpio_to_slice_num");
+    if(gpio.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("gpio", gpio.getValue()); }
+    __expectedCall__.andReturnValue(static_cast<unsigned int>(__return__));
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& pwm_get_counter(CppUMockGen::Parameter<uint> slice_num, uint16_t __return__)
+{
+    return pwm_get_counter(1, slice_num, __return__);
+}
+MockExpectedCall& pwm_get_counter(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num, uint16_t __return__)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_get_counter");
+    if(slice_num.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("slice_num", slice_num.getValue()); }
+    __expectedCall__.andReturnValue(static_cast<unsigned int>(__return__));
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& pwm_get_irq_status_mask(uint32_t __return__)
+{
+    return pwm_get_irq_status_mask(1, __return__);
+}
+MockExpectedCall& pwm_get_irq_status_mask(unsigned int __numCalls__, uint32_t __return__)
+{
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_get_irq_status_mask");
+    __expectedCall__.andReturnValue(static_cast<unsigned int>(__return__));
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& check_slice_num_param(CppUMockGen::Parameter<uint> slice_num)
+{
+    return check_slice_num_param(1, slice_num);
+}
+MockExpectedCall& check_slice_num_param(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "check_slice_num_param");
+    if(slice_num.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("slice_num", slice_num.getValue()); }
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& pwm_advance_count(CppUMockGen::Parameter<uint> slice_num)
+{
+    return pwm_advance_count(1, slice_num);
+}
+MockExpectedCall& pwm_advance_count(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_advance_count");
+    if(slice_num.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("slice_num", slice_num.getValue()); }
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& pwm_clear_irq(CppUMockGen::Parameter<uint> slice_num)
+{
+    return pwm_clear_irq(1, slice_num);
+}
+MockExpectedCall& pwm_clear_irq(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_clear_irq");
+    if(slice_num.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("slice_num", slice_num.getValue()); }
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& pwm_config_set_clkdiv(pwm_config * c, CppUMockGen::Parameter<float> div)
+{
+    return pwm_config_set_clkdiv(1, c, div);
+}
+MockExpectedCall& pwm_config_set_clkdiv(unsigned int __numCalls__, pwm_config * c, CppUMockGen::Parameter<float> div)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_config_set_clkdiv");
+    __expectedCall__.withOutputParameterOfTypeReturning("pwm_config", "c", c);
+    if(div.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withDoubleParameter("div", div.getValue()); }
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& pwm_config_set_clkdiv_int(pwm_config * c, CppUMockGen::Parameter<uint> div)
+{
+    return pwm_config_set_clkdiv_int(1, c, div);
+}
+MockExpectedCall& pwm_config_set_clkdiv_int(unsigned int __numCalls__, pwm_config * c, CppUMockGen::Parameter<uint> div)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_config_set_clkdiv_int");
+    __expectedCall__.withOutputParameterOfTypeReturning("pwm_config", "c", c);
+    if(div.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("div", div.getValue()); }
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& pwm_config_set_clkdiv_int_frac(pwm_config * c, CppUMockGen::Parameter<uint8_t> integer, CppUMockGen::Parameter<uint8_t> fract)
+{
+    return pwm_config_set_clkdiv_int_frac(1, c, integer, fract);
+}
+MockExpectedCall& pwm_config_set_clkdiv_int_frac(unsigned int __numCalls__, pwm_config * c, CppUMockGen::Parameter<uint8_t> integer, CppUMockGen::Parameter<uint8_t> fract)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_config_set_clkdiv_int_frac");
+    __expectedCall__.withOutputParameterOfTypeReturning("pwm_config", "c", c);
+    if(integer.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("integer", integer.getValue()); }
+    if(fract.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("fract", fract.getValue()); }
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& pwm_config_set_clkdiv_mode(pwm_config * c, CppUMockGen::Parameter<enum pwm_clkdiv_mode> mode)
+{
+    return pwm_config_set_clkdiv_mode(1, c, mode);
+}
+MockExpectedCall& pwm_config_set_clkdiv_mode(unsigned int __numCalls__, pwm_config * c, CppUMockGen::Parameter<enum pwm_clkdiv_mode> mode)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_config_set_clkdiv_mode");
+    __expectedCall__.withOutputParameterOfTypeReturning("pwm_config", "c", c);
+    if(mode.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withIntParameter("mode", static_cast<int>(mode.getValue())); }
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& pwm_config_set_output_polarity(pwm_config * c, CppUMockGen::Parameter<_Bool> a, CppUMockGen::Parameter<_Bool> b)
+{
+    return pwm_config_set_output_polarity(1, c, a, b);
+}
+MockExpectedCall& pwm_config_set_output_polarity(unsigned int __numCalls__, pwm_config * c, CppUMockGen::Parameter<_Bool> a, CppUMockGen::Parameter<_Bool> b)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_config_set_output_polarity");
+    __expectedCall__.withOutputParameterOfTypeReturning("pwm_config", "c", c);
+    if(a.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withBoolParameter("a", a.getValue()); }
+    if(b.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withBoolParameter("b", b.getValue()); }
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& pwm_config_set_phase_correct(pwm_config * c, CppUMockGen::Parameter<_Bool> phase_correct)
+{
+    return pwm_config_set_phase_correct(1, c, phase_correct);
+}
+MockExpectedCall& pwm_config_set_phase_correct(unsigned int __numCalls__, pwm_config * c, CppUMockGen::Parameter<_Bool> phase_correct)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_config_set_phase_correct");
+    __expectedCall__.withOutputParameterOfTypeReturning("pwm_config", "c", c);
+    if(phase_correct.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withBoolParameter("phase_correct", phase_correct.getValue()); }
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& pwm_config_set_wrap(pwm_config * c, CppUMockGen::Parameter<uint16_t> wrap)
+{
+    return pwm_config_set_wrap(1, c, wrap);
+}
+MockExpectedCall& pwm_config_set_wrap(unsigned int __numCalls__, pwm_config * c, CppUMockGen::Parameter<uint16_t> wrap)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_config_set_wrap");
+    __expectedCall__.withOutputParameterOfTypeReturning("pwm_config", "c", c);
+    if(wrap.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("wrap", wrap.getValue()); }
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& pwm_force_irq(CppUMockGen::Parameter<uint> slice_num)
+{
+    return pwm_force_irq(1, slice_num);
+}
+MockExpectedCall& pwm_force_irq(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_force_irq");
+    if(slice_num.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("slice_num", slice_num.getValue()); }
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& pwm_init(CppUMockGen::Parameter<uint> slice_num, pwm_config * c, CppUMockGen::Parameter<_Bool> start)
+{
+    return pwm_init(1, slice_num, c, start);
+}
+MockExpectedCall& pwm_init(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num, pwm_config * c, CppUMockGen::Parameter<_Bool> start)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_init");
+    if(slice_num.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("slice_num", slice_num.getValue()); }
+    __expectedCall__.withOutputParameterOfTypeReturning("pwm_config", "c", c);
+    if(start.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withBoolParameter("start", start.getValue()); }
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& pwm_retard_count(CppUMockGen::Parameter<uint> slice_num)
+{
+    return pwm_retard_count(1, slice_num);
+}
+MockExpectedCall& pwm_retard_count(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_retard_count");
+    if(slice_num.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("slice_num", slice_num.getValue()); }
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& pwm_set_both_levels(CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<uint16_t> level_a, CppUMockGen::Parameter<uint16_t> level_b)
+{
+    return pwm_set_both_levels(1, slice_num, level_a, level_b);
+}
+MockExpectedCall& pwm_set_both_levels(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<uint16_t> level_a, CppUMockGen::Parameter<uint16_t> level_b)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_set_both_levels");
+    if(slice_num.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("slice_num", slice_num.getValue()); }
+    if(level_a.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("level_a", level_a.getValue()); }
+    if(level_b.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("level_b", level_b.getValue()); }
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& pwm_set_chan_level(CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<uint> chan, CppUMockGen::Parameter<uint16_t> level)
+{
+    return pwm_set_chan_level(1, slice_num, chan, level);
+}
+MockExpectedCall& pwm_set_chan_level(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<uint> chan, CppUMockGen::Parameter<uint16_t> level)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_set_chan_level");
+    if(slice_num.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("slice_num", slice_num.getValue()); }
+    if(chan.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("chan", chan.getValue()); }
+    if(level.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("level", level.getValue()); }
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& pwm_set_clkdiv(CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<float> divider)
+{
+    return pwm_set_clkdiv(1, slice_num, divider);
+}
+MockExpectedCall& pwm_set_clkdiv(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<float> divider)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_set_clkdiv");
+    if(slice_num.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("slice_num", slice_num.getValue()); }
+    if(divider.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withDoubleParameter("divider", divider.getValue()); }
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& pwm_set_clkdiv_int_frac(CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<uint8_t> integer, CppUMockGen::Parameter<uint8_t> fract)
+{
+    return pwm_set_clkdiv_int_frac(1, slice_num, integer, fract);
+}
+MockExpectedCall& pwm_set_clkdiv_int_frac(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<uint8_t> integer, CppUMockGen::Parameter<uint8_t> fract)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_set_clkdiv_int_frac");
+    if(slice_num.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("slice_num", slice_num.getValue()); }
+    if(integer.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("integer", integer.getValue()); }
+    if(fract.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("fract", fract.getValue()); }
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& pwm_set_clkdiv_mode(CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<enum pwm_clkdiv_mode> mode)
+{
+    return pwm_set_clkdiv_mode(1, slice_num, mode);
+}
+MockExpectedCall& pwm_set_clkdiv_mode(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<enum pwm_clkdiv_mode> mode)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_set_clkdiv_mode");
+    if(slice_num.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("slice_num", slice_num.getValue()); }
+    if(mode.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withIntParameter("mode", static_cast<int>(mode.getValue())); }
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& pwm_set_counter(CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<uint16_t> c)
+{
+    return pwm_set_counter(1, slice_num, c);
+}
+MockExpectedCall& pwm_set_counter(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<uint16_t> c)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_set_counter");
+    if(slice_num.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("slice_num", slice_num.getValue()); }
+    if(c.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("c", c.getValue()); }
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& pwm_set_enabled(CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<_Bool> enabled)
+{
+    return pwm_set_enabled(1, slice_num, enabled);
+}
+MockExpectedCall& pwm_set_enabled(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<_Bool> enabled)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_set_enabled");
+    if(slice_num.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("slice_num", slice_num.getValue()); }
+    if(enabled.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withBoolParameter("enabled", enabled.getValue()); }
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& pwm_set_gpio_level(CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<uint16_t> level)
+{
+    return pwm_set_gpio_level(1, gpio, level);
+}
+MockExpectedCall& pwm_set_gpio_level(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<uint16_t> level)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_set_gpio_level");
+    if(gpio.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("gpio", gpio.getValue()); }
+    if(level.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("level", level.getValue()); }
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
 MockExpectedCall& pwm_set_irq_enabled(CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<_Bool> enabled)
 {
     return pwm_set_irq_enabled(1, slice_num, enabled);
@@ -39,59 +466,64 @@ MockExpectedCall& pwm_set_irq_mask_enabled(unsigned int __numCalls__, CppUMockGe
 }
 
 namespace expect {
-MockExpectedCall& pwm_clear_irq(CppUMockGen::Parameter<uint> slice_num)
+MockExpectedCall& pwm_set_mask_enabled(CppUMockGen::Parameter<uint32_t> mask)
 {
-    return pwm_clear_irq(1, slice_num);
+    return pwm_set_mask_enabled(1, mask);
 }
-MockExpectedCall& pwm_clear_irq(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num)
+MockExpectedCall& pwm_set_mask_enabled(unsigned int __numCalls__, CppUMockGen::Parameter<uint32_t> mask)
 {
     bool __ignoreOtherParams__ = false;
-    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_clear_irq");
-    if(slice_num.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("slice_num", slice_num.getValue()); }
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_set_mask_enabled");
+    if(mask.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("mask", mask.getValue()); }
     if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
     return __expectedCall__;
 }
 }
 
 namespace expect {
-MockExpectedCall& pwm_get_irq_status_mask(uint32_t __return__)
+MockExpectedCall& pwm_set_output_polarity(CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<_Bool> a, CppUMockGen::Parameter<_Bool> b)
 {
-    return pwm_get_irq_status_mask(1, __return__);
+    return pwm_set_output_polarity(1, slice_num, a, b);
 }
-MockExpectedCall& pwm_get_irq_status_mask(unsigned int __numCalls__, uint32_t __return__)
-{
-    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_get_irq_status_mask");
-    __expectedCall__.andReturnValue(static_cast<unsigned int>(__return__));
-    return __expectedCall__;
-}
-}
-
-namespace expect {
-MockExpectedCall& pwm_force_irq(CppUMockGen::Parameter<uint> slice_num)
-{
-    return pwm_force_irq(1, slice_num);
-}
-MockExpectedCall& pwm_force_irq(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num)
+MockExpectedCall& pwm_set_output_polarity(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<_Bool> a, CppUMockGen::Parameter<_Bool> b)
 {
     bool __ignoreOtherParams__ = false;
-    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_force_irq");
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_set_output_polarity");
     if(slice_num.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("slice_num", slice_num.getValue()); }
+    if(a.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withBoolParameter("a", a.getValue()); }
+    if(b.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withBoolParameter("b", b.getValue()); }
     if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
     return __expectedCall__;
 }
 }
 
 namespace expect {
-MockExpectedCall& pwm_get_dreq(CppUMockGen::Parameter<uint> slice_num, uint __return__)
+MockExpectedCall& pwm_set_phase_correct(CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<_Bool> phase_correct)
 {
-    return pwm_get_dreq(1, slice_num, __return__);
+    return pwm_set_phase_correct(1, slice_num, phase_correct);
 }
-MockExpectedCall& pwm_get_dreq(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num, uint __return__)
+MockExpectedCall& pwm_set_phase_correct(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<_Bool> phase_correct)
 {
     bool __ignoreOtherParams__ = false;
-    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_get_dreq");
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_set_phase_correct");
     if(slice_num.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("slice_num", slice_num.getValue()); }
-    __expectedCall__.andReturnValue(static_cast<unsigned int>(__return__));
+    if(phase_correct.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withBoolParameter("phase_correct", phase_correct.getValue()); }
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& pwm_set_wrap(CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<uint16_t> wrap)
+{
+    return pwm_set_wrap(1, slice_num, wrap);
+}
+MockExpectedCall& pwm_set_wrap(unsigned int __numCalls__, CppUMockGen::Parameter<uint> slice_num, CppUMockGen::Parameter<uint16_t> wrap)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "pwm_set_wrap");
+    if(slice_num.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("slice_num", slice_num.getValue()); }
+    if(wrap.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("wrap", wrap.getValue()); }
     if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
     return __expectedCall__;
 }

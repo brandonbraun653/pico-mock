@@ -1,16 +1,16 @@
 /******************************************************************************
  *  File Name:
- *    stdlib.h
+ *    unique_id.h
  *
  *  Description:
- *    Pico SDK STDLIB Mocking
+ *    Pico SDK UNIQUE_ID Mocking
  *
  *  2024 | Brandon Braun | brandonbraun653@protonmail.com
  *****************************************************************************/
 
 #pragma once
-#ifndef PICO_MOCK_STDLIB_H
-#define PICO_MOCK_STDLIB_H
+#ifndef PICO_MOCK_UNIQUE_ID_H
+#define PICO_MOCK_UNIQUE_ID_H
 
 #ifdef __cplusplus
 extern "C"
@@ -23,13 +23,17 @@ Includes
 #include <stdint.h>
 #include "pico.h"
 
-  void setup_default_uart( void );
-  void set_sys_clock_48mhz( void );
-  void set_sys_clock_pll( uint32_t vco_freq, uint post_div1, uint post_div2 );
-  bool check_sys_clock_khz( uint32_t freq_khz, uint *vco_freq_out, uint *post_div1_out, uint *post_div2_out );
-  bool set_sys_clock_khz( uint32_t freq_khz, bool required );
+#define PICO_UNIQUE_BOARD_ID_SIZE_BYTES 8
+
+  typedef struct
+  {
+    uint8_t id[ PICO_UNIQUE_BOARD_ID_SIZE_BYTES ];
+  } pico_unique_board_id_t;
+
+  void pico_get_unique_board_id( pico_unique_board_id_t *id_out );
+  void pico_get_unique_board_id_string( char *id_out, uint len );
 
 #ifdef __cplusplus
 }
 #endif
-#endif /* !PICO_MOCK_STDLIB_H */
+#endif /* !PICO_MOCK_UNIQUE_ID_H */

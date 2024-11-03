@@ -15,3 +15,178 @@ void sleep_ms(uint32_t ms)
     mock().actualCall("sleep_ms").withUnsignedIntParameter("ms", ms);
 }
 
+absolute_time_t get_absolute_time()
+{
+    return *static_cast<const absolute_time_t*>(mock().actualCall("get_absolute_time").returnConstPointerValue());
+}
+
+uint32_t us_to_ms(uint64_t us)
+{
+    return static_cast<uint32_t>(mock().actualCall("us_to_ms").withUnsignedLongIntParameter("us", us).returnUnsignedIntValue());
+}
+
+uint32_t to_ms_since_boot(absolute_time_t t)
+{
+    return static_cast<uint32_t>(mock().actualCall("to_ms_since_boot").withParameterOfType("absolute_time_t", "t", &t).returnUnsignedIntValue());
+}
+
+absolute_time_t delayed_by_us(const absolute_time_t t, uint64_t us)
+{
+    return *static_cast<const absolute_time_t*>(mock().actualCall("delayed_by_us").withParameterOfType("absolute_time_t", "t", &t).withUnsignedLongIntParameter("us", us).returnConstPointerValue());
+}
+
+absolute_time_t delayed_by_ms(const absolute_time_t t, uint32_t ms)
+{
+    return *static_cast<const absolute_time_t*>(mock().actualCall("delayed_by_ms").withParameterOfType("absolute_time_t", "t", &t).withUnsignedIntParameter("ms", ms).returnConstPointerValue());
+}
+
+absolute_time_t make_timeout_time_us(uint64_t us)
+{
+    return *static_cast<const absolute_time_t*>(mock().actualCall("make_timeout_time_us").withUnsignedLongIntParameter("us", us).returnConstPointerValue());
+}
+
+absolute_time_t make_timeout_time_ms(uint32_t ms)
+{
+    return *static_cast<const absolute_time_t*>(mock().actualCall("make_timeout_time_ms").withUnsignedIntParameter("ms", ms).returnConstPointerValue());
+}
+
+int64_t absolute_time_diff_us(absolute_time_t from, absolute_time_t to)
+{
+    return static_cast<int64_t>(mock().actualCall("absolute_time_diff_us").withParameterOfType("absolute_time_t", "from", &from).withParameterOfType("absolute_time_t", "to", &to).returnLongIntValue());
+}
+
+absolute_time_t absolute_time_min(absolute_time_t a, absolute_time_t b)
+{
+    return *static_cast<const absolute_time_t*>(mock().actualCall("absolute_time_min").withParameterOfType("absolute_time_t", "a", &a).withParameterOfType("absolute_time_t", "b", &b).returnConstPointerValue());
+}
+
+_Bool is_at_the_end_of_time(absolute_time_t t)
+{
+    return mock().actualCall("is_at_the_end_of_time").withParameterOfType("absolute_time_t", "t", &t).returnBoolValue();
+}
+
+_Bool is_nil_time(absolute_time_t t)
+{
+    return mock().actualCall("is_nil_time").withParameterOfType("absolute_time_t", "t", &t).returnBoolValue();
+}
+
+void sleep_until(absolute_time_t target)
+{
+    mock().actualCall("sleep_until").withParameterOfType("absolute_time_t", "target", &target);
+}
+
+void sleep_us(uint64_t us)
+{
+    mock().actualCall("sleep_us").withUnsignedLongIntParameter("us", us);
+}
+
+_Bool best_effort_wfe_or_timeout(absolute_time_t timeout_timestamp)
+{
+    return mock().actualCall("best_effort_wfe_or_timeout").withParameterOfType("absolute_time_t", "timeout_timestamp", &timeout_timestamp).returnBoolValue();
+}
+
+void alarm_pool_init_default()
+{
+    mock().actualCall("alarm_pool_init_default");
+}
+
+alarm_pool_t * alarm_pool_get_default()
+{
+    return static_cast<alarm_pool_t*>(mock().actualCall("alarm_pool_get_default").returnPointerValue());
+}
+
+alarm_pool_t * alarm_pool_create(uint hardware_alarm_num, uint max_timers)
+{
+    return static_cast<alarm_pool_t*>(mock().actualCall("alarm_pool_create").withUnsignedIntParameter("hardware_alarm_num", hardware_alarm_num).withUnsignedIntParameter("max_timers", max_timers).returnPointerValue());
+}
+
+alarm_pool_t * alarm_pool_create_with_unused_hardware_alarm(uint max_timers)
+{
+    return static_cast<alarm_pool_t*>(mock().actualCall("alarm_pool_create_with_unused_hardware_alarm").withUnsignedIntParameter("max_timers", max_timers).returnPointerValue());
+}
+
+uint alarm_pool_hardware_alarm_num(alarm_pool_t * pool)
+{
+    return static_cast<uint>(mock().actualCall("alarm_pool_hardware_alarm_num").withOutputParameter("pool", pool).returnUnsignedIntValue());
+}
+
+uint alarm_pool_core_num(alarm_pool_t * pool)
+{
+    return static_cast<uint>(mock().actualCall("alarm_pool_core_num").withOutputParameter("pool", pool).returnUnsignedIntValue());
+}
+
+void alarm_pool_destroy(alarm_pool_t * pool)
+{
+    mock().actualCall("alarm_pool_destroy").withOutputParameter("pool", pool);
+}
+
+alarm_id_t alarm_pool_add_alarm_at(alarm_pool_t * pool, absolute_time_t time, alarm_callback_t callback, void * user_data, _Bool fire_if_past)
+{
+    return static_cast<alarm_id_t>(mock().actualCall("alarm_pool_add_alarm_at").withOutputParameter("pool", pool).withParameterOfType("absolute_time_t", "time", &time).withPointerParameter("callback", callback).withPointerParameter("user_data", user_data).withBoolParameter("fire_if_past", fire_if_past).returnIntValue());
+}
+
+alarm_id_t alarm_pool_add_alarm_at_force_in_context(alarm_pool_t * pool, absolute_time_t time, alarm_callback_t callback, void * user_data)
+{
+    return static_cast<alarm_id_t>(mock().actualCall("alarm_pool_add_alarm_at_force_in_context").withOutputParameter("pool", pool).withParameterOfType("absolute_time_t", "time", &time).withPointerParameter("callback", callback).withPointerParameter("user_data", user_data).returnIntValue());
+}
+
+alarm_id_t alarm_pool_add_alarm_in_us(alarm_pool_t * pool, uint64_t us, alarm_callback_t callback, void * user_data, _Bool fire_if_past)
+{
+    return static_cast<alarm_id_t>(mock().actualCall("alarm_pool_add_alarm_in_us").withOutputParameter("pool", pool).withUnsignedLongIntParameter("us", us).withPointerParameter("callback", callback).withPointerParameter("user_data", user_data).withBoolParameter("fire_if_past", fire_if_past).returnIntValue());
+}
+
+alarm_id_t alarm_pool_add_alarm_in_ms(alarm_pool_t * pool, uint32_t ms, alarm_callback_t callback, void * user_data, _Bool fire_if_past)
+{
+    return static_cast<alarm_id_t>(mock().actualCall("alarm_pool_add_alarm_in_ms").withOutputParameter("pool", pool).withUnsignedIntParameter("ms", ms).withPointerParameter("callback", callback).withPointerParameter("user_data", user_data).withBoolParameter("fire_if_past", fire_if_past).returnIntValue());
+}
+
+_Bool alarm_pool_cancel_alarm(alarm_pool_t * pool, alarm_id_t alarm_id)
+{
+    return mock().actualCall("alarm_pool_cancel_alarm").withOutputParameter("pool", pool).withIntParameter("alarm_id", alarm_id).returnBoolValue();
+}
+
+alarm_id_t add_alarm_at(absolute_time_t time, alarm_callback_t callback, void * user_data, _Bool fire_if_past)
+{
+    return static_cast<alarm_id_t>(mock().actualCall("add_alarm_at").withParameterOfType("absolute_time_t", "time", &time).withPointerParameter("callback", callback).withPointerParameter("user_data", user_data).withBoolParameter("fire_if_past", fire_if_past).returnIntValue());
+}
+
+alarm_id_t add_alarm_in_us(uint64_t us, alarm_callback_t callback, void * user_data, _Bool fire_if_past)
+{
+    return static_cast<alarm_id_t>(mock().actualCall("add_alarm_in_us").withUnsignedLongIntParameter("us", us).withPointerParameter("callback", callback).withPointerParameter("user_data", user_data).withBoolParameter("fire_if_past", fire_if_past).returnIntValue());
+}
+
+alarm_id_t add_alarm_in_ms(uint32_t ms, alarm_callback_t callback, void * user_data, _Bool fire_if_past)
+{
+    return static_cast<alarm_id_t>(mock().actualCall("add_alarm_in_ms").withUnsignedIntParameter("ms", ms).withPointerParameter("callback", callback).withPointerParameter("user_data", user_data).withBoolParameter("fire_if_past", fire_if_past).returnIntValue());
+}
+
+_Bool cancel_alarm(alarm_id_t alarm_id)
+{
+    return mock().actualCall("cancel_alarm").withIntParameter("alarm_id", alarm_id).returnBoolValue();
+}
+
+_Bool alarm_pool_add_repeating_timer_us(alarm_pool_t * pool, int64_t delay_us, repeating_timer_callback_t callback, void * user_data, repeating_timer_t * out)
+{
+    return mock().actualCall("alarm_pool_add_repeating_timer_us").withOutputParameter("pool", pool).withLongIntParameter("delay_us", delay_us).withPointerParameter("callback", callback).withPointerParameter("user_data", user_data).withOutputParameter("out", out).returnBoolValue();
+}
+
+_Bool alarm_pool_add_repeating_timer_ms(alarm_pool_t * pool, int32_t delay_ms, repeating_timer_callback_t callback, void * user_data, repeating_timer_t * out)
+{
+    return mock().actualCall("alarm_pool_add_repeating_timer_ms").withOutputParameter("pool", pool).withIntParameter("delay_ms", delay_ms).withPointerParameter("callback", callback).withPointerParameter("user_data", user_data).withOutputParameter("out", out).returnBoolValue();
+}
+
+_Bool add_repeating_timer_us(int64_t delay_us, repeating_timer_callback_t callback, void * user_data, repeating_timer_t * out)
+{
+    return mock().actualCall("add_repeating_timer_us").withLongIntParameter("delay_us", delay_us).withPointerParameter("callback", callback).withPointerParameter("user_data", user_data).withOutputParameter("out", out).returnBoolValue();
+}
+
+_Bool add_repeating_timer_ms(int32_t delay_ms, repeating_timer_callback_t callback, void * user_data, repeating_timer_t * out)
+{
+    return mock().actualCall("add_repeating_timer_ms").withIntParameter("delay_ms", delay_ms).withPointerParameter("callback", callback).withPointerParameter("user_data", user_data).withOutputParameter("out", out).returnBoolValue();
+}
+
+_Bool cancel_repeating_timer(repeating_timer_t * timer)
+{
+    return mock().actualCall("cancel_repeating_timer").withOutputParameter("timer", timer).returnBoolValue();
+}
+

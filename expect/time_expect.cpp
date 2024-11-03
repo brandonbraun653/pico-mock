@@ -21,3 +21,586 @@ MockExpectedCall& sleep_ms(unsigned int __numCalls__, CppUMockGen::Parameter<uin
 }
 }
 
+namespace expect {
+MockExpectedCall& get_absolute_time(absolute_time_t &__return__)
+{
+    return get_absolute_time(1, __return__);
+}
+MockExpectedCall& get_absolute_time(unsigned int __numCalls__, absolute_time_t &__return__)
+{
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "get_absolute_time");
+    __expectedCall__.andReturnValue(static_cast<const void*>(&__return__));
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& us_to_ms(CppUMockGen::Parameter<uint64_t> us, uint32_t __return__)
+{
+    return us_to_ms(1, us, __return__);
+}
+MockExpectedCall& us_to_ms(unsigned int __numCalls__, CppUMockGen::Parameter<uint64_t> us, uint32_t __return__)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "us_to_ms");
+    if(us.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedLongIntParameter("us", us.getValue()); }
+    __expectedCall__.andReturnValue(static_cast<unsigned int>(__return__));
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& to_ms_since_boot(CppUMockGen::Parameter<absolute_time_t&> t, uint32_t __return__)
+{
+    return to_ms_since_boot(1, t, __return__);
+}
+MockExpectedCall& to_ms_since_boot(unsigned int __numCalls__, CppUMockGen::Parameter<absolute_time_t&> t, uint32_t __return__)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "to_ms_since_boot");
+    if(t.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withParameterOfType("absolute_time_t", "t", &t.getValue()); }
+    __expectedCall__.andReturnValue(static_cast<unsigned int>(__return__));
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& delayed_by_us(CppUMockGen::Parameter<const absolute_time_t&> t, CppUMockGen::Parameter<uint64_t> us, absolute_time_t &__return__)
+{
+    return delayed_by_us(1, t, us, __return__);
+}
+MockExpectedCall& delayed_by_us(unsigned int __numCalls__, CppUMockGen::Parameter<const absolute_time_t&> t, CppUMockGen::Parameter<uint64_t> us, absolute_time_t &__return__)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "delayed_by_us");
+    if(t.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withParameterOfType("absolute_time_t", "t", &t.getValue()); }
+    if(us.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedLongIntParameter("us", us.getValue()); }
+    __expectedCall__.andReturnValue(static_cast<const void*>(&__return__));
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& delayed_by_ms(CppUMockGen::Parameter<const absolute_time_t&> t, CppUMockGen::Parameter<uint32_t> ms, absolute_time_t &__return__)
+{
+    return delayed_by_ms(1, t, ms, __return__);
+}
+MockExpectedCall& delayed_by_ms(unsigned int __numCalls__, CppUMockGen::Parameter<const absolute_time_t&> t, CppUMockGen::Parameter<uint32_t> ms, absolute_time_t &__return__)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "delayed_by_ms");
+    if(t.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withParameterOfType("absolute_time_t", "t", &t.getValue()); }
+    if(ms.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("ms", ms.getValue()); }
+    __expectedCall__.andReturnValue(static_cast<const void*>(&__return__));
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& make_timeout_time_us(CppUMockGen::Parameter<uint64_t> us, absolute_time_t &__return__)
+{
+    return make_timeout_time_us(1, us, __return__);
+}
+MockExpectedCall& make_timeout_time_us(unsigned int __numCalls__, CppUMockGen::Parameter<uint64_t> us, absolute_time_t &__return__)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "make_timeout_time_us");
+    if(us.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedLongIntParameter("us", us.getValue()); }
+    __expectedCall__.andReturnValue(static_cast<const void*>(&__return__));
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& make_timeout_time_ms(CppUMockGen::Parameter<uint32_t> ms, absolute_time_t &__return__)
+{
+    return make_timeout_time_ms(1, ms, __return__);
+}
+MockExpectedCall& make_timeout_time_ms(unsigned int __numCalls__, CppUMockGen::Parameter<uint32_t> ms, absolute_time_t &__return__)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "make_timeout_time_ms");
+    if(ms.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("ms", ms.getValue()); }
+    __expectedCall__.andReturnValue(static_cast<const void*>(&__return__));
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& absolute_time_diff_us(CppUMockGen::Parameter<absolute_time_t&> from, CppUMockGen::Parameter<absolute_time_t&> to, int64_t __return__)
+{
+    return absolute_time_diff_us(1, from, to, __return__);
+}
+MockExpectedCall& absolute_time_diff_us(unsigned int __numCalls__, CppUMockGen::Parameter<absolute_time_t&> from, CppUMockGen::Parameter<absolute_time_t&> to, int64_t __return__)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "absolute_time_diff_us");
+    if(from.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withParameterOfType("absolute_time_t", "from", &from.getValue()); }
+    if(to.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withParameterOfType("absolute_time_t", "to", &to.getValue()); }
+    __expectedCall__.andReturnValue(static_cast<long>(__return__));
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& absolute_time_min(CppUMockGen::Parameter<absolute_time_t&> a, CppUMockGen::Parameter<absolute_time_t&> b, absolute_time_t &__return__)
+{
+    return absolute_time_min(1, a, b, __return__);
+}
+MockExpectedCall& absolute_time_min(unsigned int __numCalls__, CppUMockGen::Parameter<absolute_time_t&> a, CppUMockGen::Parameter<absolute_time_t&> b, absolute_time_t &__return__)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "absolute_time_min");
+    if(a.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withParameterOfType("absolute_time_t", "a", &a.getValue()); }
+    if(b.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withParameterOfType("absolute_time_t", "b", &b.getValue()); }
+    __expectedCall__.andReturnValue(static_cast<const void*>(&__return__));
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& is_at_the_end_of_time(CppUMockGen::Parameter<absolute_time_t&> t, _Bool __return__)
+{
+    return is_at_the_end_of_time(1, t, __return__);
+}
+MockExpectedCall& is_at_the_end_of_time(unsigned int __numCalls__, CppUMockGen::Parameter<absolute_time_t&> t, _Bool __return__)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "is_at_the_end_of_time");
+    if(t.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withParameterOfType("absolute_time_t", "t", &t.getValue()); }
+    __expectedCall__.andReturnValue(__return__);
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& is_nil_time(CppUMockGen::Parameter<absolute_time_t&> t, _Bool __return__)
+{
+    return is_nil_time(1, t, __return__);
+}
+MockExpectedCall& is_nil_time(unsigned int __numCalls__, CppUMockGen::Parameter<absolute_time_t&> t, _Bool __return__)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "is_nil_time");
+    if(t.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withParameterOfType("absolute_time_t", "t", &t.getValue()); }
+    __expectedCall__.andReturnValue(__return__);
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& sleep_until(CppUMockGen::Parameter<absolute_time_t&> target)
+{
+    return sleep_until(1, target);
+}
+MockExpectedCall& sleep_until(unsigned int __numCalls__, CppUMockGen::Parameter<absolute_time_t&> target)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "sleep_until");
+    if(target.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withParameterOfType("absolute_time_t", "target", &target.getValue()); }
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& sleep_us(CppUMockGen::Parameter<uint64_t> us)
+{
+    return sleep_us(1, us);
+}
+MockExpectedCall& sleep_us(unsigned int __numCalls__, CppUMockGen::Parameter<uint64_t> us)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "sleep_us");
+    if(us.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedLongIntParameter("us", us.getValue()); }
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& best_effort_wfe_or_timeout(CppUMockGen::Parameter<absolute_time_t&> timeout_timestamp, _Bool __return__)
+{
+    return best_effort_wfe_or_timeout(1, timeout_timestamp, __return__);
+}
+MockExpectedCall& best_effort_wfe_or_timeout(unsigned int __numCalls__, CppUMockGen::Parameter<absolute_time_t&> timeout_timestamp, _Bool __return__)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "best_effort_wfe_or_timeout");
+    if(timeout_timestamp.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withParameterOfType("absolute_time_t", "timeout_timestamp", &timeout_timestamp.getValue()); }
+    __expectedCall__.andReturnValue(__return__);
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& alarm_pool_init_default()
+{
+    return alarm_pool_init_default(1);
+}
+MockExpectedCall& alarm_pool_init_default(unsigned int __numCalls__)
+{
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "alarm_pool_init_default");
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& alarm_pool_get_default(alarm_pool_t * __return__)
+{
+    return alarm_pool_get_default(1, __return__);
+}
+MockExpectedCall& alarm_pool_get_default(unsigned int __numCalls__, alarm_pool_t * __return__)
+{
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "alarm_pool_get_default");
+    __expectedCall__.andReturnValue(static_cast<void*>(__return__));
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& alarm_pool_create(CppUMockGen::Parameter<uint> hardware_alarm_num, CppUMockGen::Parameter<uint> max_timers, alarm_pool_t * __return__)
+{
+    return alarm_pool_create(1, hardware_alarm_num, max_timers, __return__);
+}
+MockExpectedCall& alarm_pool_create(unsigned int __numCalls__, CppUMockGen::Parameter<uint> hardware_alarm_num, CppUMockGen::Parameter<uint> max_timers, alarm_pool_t * __return__)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "alarm_pool_create");
+    if(hardware_alarm_num.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("hardware_alarm_num", hardware_alarm_num.getValue()); }
+    if(max_timers.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("max_timers", max_timers.getValue()); }
+    __expectedCall__.andReturnValue(static_cast<void*>(__return__));
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& alarm_pool_create_with_unused_hardware_alarm(CppUMockGen::Parameter<uint> max_timers, alarm_pool_t * __return__)
+{
+    return alarm_pool_create_with_unused_hardware_alarm(1, max_timers, __return__);
+}
+MockExpectedCall& alarm_pool_create_with_unused_hardware_alarm(unsigned int __numCalls__, CppUMockGen::Parameter<uint> max_timers, alarm_pool_t * __return__)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "alarm_pool_create_with_unused_hardware_alarm");
+    if(max_timers.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("max_timers", max_timers.getValue()); }
+    __expectedCall__.andReturnValue(static_cast<void*>(__return__));
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& alarm_pool_hardware_alarm_num(alarm_pool_t * pool, size_t __sizeof_pool, uint __return__)
+{
+    return alarm_pool_hardware_alarm_num(1, pool, __sizeof_pool, __return__);
+}
+MockExpectedCall& alarm_pool_hardware_alarm_num(unsigned int __numCalls__, alarm_pool_t * pool, size_t __sizeof_pool, uint __return__)
+{
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "alarm_pool_hardware_alarm_num");
+    __expectedCall__.withOutputParameterReturning("pool", pool, __sizeof_pool);
+    __expectedCall__.andReturnValue(static_cast<unsigned int>(__return__));
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& alarm_pool_core_num(alarm_pool_t * pool, size_t __sizeof_pool, uint __return__)
+{
+    return alarm_pool_core_num(1, pool, __sizeof_pool, __return__);
+}
+MockExpectedCall& alarm_pool_core_num(unsigned int __numCalls__, alarm_pool_t * pool, size_t __sizeof_pool, uint __return__)
+{
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "alarm_pool_core_num");
+    __expectedCall__.withOutputParameterReturning("pool", pool, __sizeof_pool);
+    __expectedCall__.andReturnValue(static_cast<unsigned int>(__return__));
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& alarm_pool_destroy(alarm_pool_t * pool, size_t __sizeof_pool)
+{
+    return alarm_pool_destroy(1, pool, __sizeof_pool);
+}
+MockExpectedCall& alarm_pool_destroy(unsigned int __numCalls__, alarm_pool_t * pool, size_t __sizeof_pool)
+{
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "alarm_pool_destroy");
+    __expectedCall__.withOutputParameterReturning("pool", pool, __sizeof_pool);
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& alarm_pool_add_alarm_at(alarm_pool_t * pool, size_t __sizeof_pool, CppUMockGen::Parameter<absolute_time_t&> time, CppUMockGen::Parameter<alarm_callback_t> callback, CppUMockGen::Parameter<void *> user_data, CppUMockGen::Parameter<_Bool> fire_if_past, alarm_id_t __return__)
+{
+    return alarm_pool_add_alarm_at(1, pool, __sizeof_pool, time, callback, user_data, fire_if_past, __return__);
+}
+MockExpectedCall& alarm_pool_add_alarm_at(unsigned int __numCalls__, alarm_pool_t * pool, size_t __sizeof_pool, CppUMockGen::Parameter<absolute_time_t&> time, CppUMockGen::Parameter<alarm_callback_t> callback, CppUMockGen::Parameter<void *> user_data, CppUMockGen::Parameter<_Bool> fire_if_past, alarm_id_t __return__)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "alarm_pool_add_alarm_at");
+    __expectedCall__.withOutputParameterReturning("pool", pool, __sizeof_pool);
+    if(time.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withParameterOfType("absolute_time_t", "time", &time.getValue()); }
+    if(callback.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withPointerParameter("callback", callback.getValue()); }
+    if(user_data.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withPointerParameter("user_data", user_data.getValue()); }
+    if(fire_if_past.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withBoolParameter("fire_if_past", fire_if_past.getValue()); }
+    __expectedCall__.andReturnValue(static_cast<int>(__return__));
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& alarm_pool_add_alarm_at_force_in_context(alarm_pool_t * pool, size_t __sizeof_pool, CppUMockGen::Parameter<absolute_time_t&> time, CppUMockGen::Parameter<alarm_callback_t> callback, CppUMockGen::Parameter<void *> user_data, alarm_id_t __return__)
+{
+    return alarm_pool_add_alarm_at_force_in_context(1, pool, __sizeof_pool, time, callback, user_data, __return__);
+}
+MockExpectedCall& alarm_pool_add_alarm_at_force_in_context(unsigned int __numCalls__, alarm_pool_t * pool, size_t __sizeof_pool, CppUMockGen::Parameter<absolute_time_t&> time, CppUMockGen::Parameter<alarm_callback_t> callback, CppUMockGen::Parameter<void *> user_data, alarm_id_t __return__)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "alarm_pool_add_alarm_at_force_in_context");
+    __expectedCall__.withOutputParameterReturning("pool", pool, __sizeof_pool);
+    if(time.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withParameterOfType("absolute_time_t", "time", &time.getValue()); }
+    if(callback.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withPointerParameter("callback", callback.getValue()); }
+    if(user_data.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withPointerParameter("user_data", user_data.getValue()); }
+    __expectedCall__.andReturnValue(static_cast<int>(__return__));
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& alarm_pool_add_alarm_in_us(alarm_pool_t * pool, size_t __sizeof_pool, CppUMockGen::Parameter<uint64_t> us, CppUMockGen::Parameter<alarm_callback_t> callback, CppUMockGen::Parameter<void *> user_data, CppUMockGen::Parameter<_Bool> fire_if_past, alarm_id_t __return__)
+{
+    return alarm_pool_add_alarm_in_us(1, pool, __sizeof_pool, us, callback, user_data, fire_if_past, __return__);
+}
+MockExpectedCall& alarm_pool_add_alarm_in_us(unsigned int __numCalls__, alarm_pool_t * pool, size_t __sizeof_pool, CppUMockGen::Parameter<uint64_t> us, CppUMockGen::Parameter<alarm_callback_t> callback, CppUMockGen::Parameter<void *> user_data, CppUMockGen::Parameter<_Bool> fire_if_past, alarm_id_t __return__)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "alarm_pool_add_alarm_in_us");
+    __expectedCall__.withOutputParameterReturning("pool", pool, __sizeof_pool);
+    if(us.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedLongIntParameter("us", us.getValue()); }
+    if(callback.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withPointerParameter("callback", callback.getValue()); }
+    if(user_data.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withPointerParameter("user_data", user_data.getValue()); }
+    if(fire_if_past.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withBoolParameter("fire_if_past", fire_if_past.getValue()); }
+    __expectedCall__.andReturnValue(static_cast<int>(__return__));
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& alarm_pool_add_alarm_in_ms(alarm_pool_t * pool, size_t __sizeof_pool, CppUMockGen::Parameter<uint32_t> ms, CppUMockGen::Parameter<alarm_callback_t> callback, CppUMockGen::Parameter<void *> user_data, CppUMockGen::Parameter<_Bool> fire_if_past, alarm_id_t __return__)
+{
+    return alarm_pool_add_alarm_in_ms(1, pool, __sizeof_pool, ms, callback, user_data, fire_if_past, __return__);
+}
+MockExpectedCall& alarm_pool_add_alarm_in_ms(unsigned int __numCalls__, alarm_pool_t * pool, size_t __sizeof_pool, CppUMockGen::Parameter<uint32_t> ms, CppUMockGen::Parameter<alarm_callback_t> callback, CppUMockGen::Parameter<void *> user_data, CppUMockGen::Parameter<_Bool> fire_if_past, alarm_id_t __return__)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "alarm_pool_add_alarm_in_ms");
+    __expectedCall__.withOutputParameterReturning("pool", pool, __sizeof_pool);
+    if(ms.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("ms", ms.getValue()); }
+    if(callback.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withPointerParameter("callback", callback.getValue()); }
+    if(user_data.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withPointerParameter("user_data", user_data.getValue()); }
+    if(fire_if_past.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withBoolParameter("fire_if_past", fire_if_past.getValue()); }
+    __expectedCall__.andReturnValue(static_cast<int>(__return__));
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& alarm_pool_cancel_alarm(alarm_pool_t * pool, size_t __sizeof_pool, CppUMockGen::Parameter<alarm_id_t> alarm_id, _Bool __return__)
+{
+    return alarm_pool_cancel_alarm(1, pool, __sizeof_pool, alarm_id, __return__);
+}
+MockExpectedCall& alarm_pool_cancel_alarm(unsigned int __numCalls__, alarm_pool_t * pool, size_t __sizeof_pool, CppUMockGen::Parameter<alarm_id_t> alarm_id, _Bool __return__)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "alarm_pool_cancel_alarm");
+    __expectedCall__.withOutputParameterReturning("pool", pool, __sizeof_pool);
+    if(alarm_id.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withIntParameter("alarm_id", alarm_id.getValue()); }
+    __expectedCall__.andReturnValue(__return__);
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& add_alarm_at(CppUMockGen::Parameter<absolute_time_t&> time, CppUMockGen::Parameter<alarm_callback_t> callback, CppUMockGen::Parameter<void *> user_data, CppUMockGen::Parameter<_Bool> fire_if_past, alarm_id_t __return__)
+{
+    return add_alarm_at(1, time, callback, user_data, fire_if_past, __return__);
+}
+MockExpectedCall& add_alarm_at(unsigned int __numCalls__, CppUMockGen::Parameter<absolute_time_t&> time, CppUMockGen::Parameter<alarm_callback_t> callback, CppUMockGen::Parameter<void *> user_data, CppUMockGen::Parameter<_Bool> fire_if_past, alarm_id_t __return__)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "add_alarm_at");
+    if(time.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withParameterOfType("absolute_time_t", "time", &time.getValue()); }
+    if(callback.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withPointerParameter("callback", callback.getValue()); }
+    if(user_data.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withPointerParameter("user_data", user_data.getValue()); }
+    if(fire_if_past.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withBoolParameter("fire_if_past", fire_if_past.getValue()); }
+    __expectedCall__.andReturnValue(static_cast<int>(__return__));
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& add_alarm_in_us(CppUMockGen::Parameter<uint64_t> us, CppUMockGen::Parameter<alarm_callback_t> callback, CppUMockGen::Parameter<void *> user_data, CppUMockGen::Parameter<_Bool> fire_if_past, alarm_id_t __return__)
+{
+    return add_alarm_in_us(1, us, callback, user_data, fire_if_past, __return__);
+}
+MockExpectedCall& add_alarm_in_us(unsigned int __numCalls__, CppUMockGen::Parameter<uint64_t> us, CppUMockGen::Parameter<alarm_callback_t> callback, CppUMockGen::Parameter<void *> user_data, CppUMockGen::Parameter<_Bool> fire_if_past, alarm_id_t __return__)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "add_alarm_in_us");
+    if(us.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedLongIntParameter("us", us.getValue()); }
+    if(callback.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withPointerParameter("callback", callback.getValue()); }
+    if(user_data.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withPointerParameter("user_data", user_data.getValue()); }
+    if(fire_if_past.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withBoolParameter("fire_if_past", fire_if_past.getValue()); }
+    __expectedCall__.andReturnValue(static_cast<int>(__return__));
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& add_alarm_in_ms(CppUMockGen::Parameter<uint32_t> ms, CppUMockGen::Parameter<alarm_callback_t> callback, CppUMockGen::Parameter<void *> user_data, CppUMockGen::Parameter<_Bool> fire_if_past, alarm_id_t __return__)
+{
+    return add_alarm_in_ms(1, ms, callback, user_data, fire_if_past, __return__);
+}
+MockExpectedCall& add_alarm_in_ms(unsigned int __numCalls__, CppUMockGen::Parameter<uint32_t> ms, CppUMockGen::Parameter<alarm_callback_t> callback, CppUMockGen::Parameter<void *> user_data, CppUMockGen::Parameter<_Bool> fire_if_past, alarm_id_t __return__)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "add_alarm_in_ms");
+    if(ms.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withUnsignedIntParameter("ms", ms.getValue()); }
+    if(callback.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withPointerParameter("callback", callback.getValue()); }
+    if(user_data.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withPointerParameter("user_data", user_data.getValue()); }
+    if(fire_if_past.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withBoolParameter("fire_if_past", fire_if_past.getValue()); }
+    __expectedCall__.andReturnValue(static_cast<int>(__return__));
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& cancel_alarm(CppUMockGen::Parameter<alarm_id_t> alarm_id, _Bool __return__)
+{
+    return cancel_alarm(1, alarm_id, __return__);
+}
+MockExpectedCall& cancel_alarm(unsigned int __numCalls__, CppUMockGen::Parameter<alarm_id_t> alarm_id, _Bool __return__)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "cancel_alarm");
+    if(alarm_id.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withIntParameter("alarm_id", alarm_id.getValue()); }
+    __expectedCall__.andReturnValue(__return__);
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& alarm_pool_add_repeating_timer_us(alarm_pool_t * pool, size_t __sizeof_pool, CppUMockGen::Parameter<int64_t> delay_us, CppUMockGen::Parameter<repeating_timer_callback_t> callback, CppUMockGen::Parameter<void *> user_data, repeating_timer_t * out, size_t __sizeof_out, _Bool __return__)
+{
+    return alarm_pool_add_repeating_timer_us(1, pool, __sizeof_pool, delay_us, callback, user_data, out, __sizeof_out, __return__);
+}
+MockExpectedCall& alarm_pool_add_repeating_timer_us(unsigned int __numCalls__, alarm_pool_t * pool, size_t __sizeof_pool, CppUMockGen::Parameter<int64_t> delay_us, CppUMockGen::Parameter<repeating_timer_callback_t> callback, CppUMockGen::Parameter<void *> user_data, repeating_timer_t * out, size_t __sizeof_out, _Bool __return__)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "alarm_pool_add_repeating_timer_us");
+    __expectedCall__.withOutputParameterReturning("pool", pool, __sizeof_pool);
+    if(delay_us.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withLongIntParameter("delay_us", delay_us.getValue()); }
+    if(callback.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withPointerParameter("callback", callback.getValue()); }
+    if(user_data.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withPointerParameter("user_data", user_data.getValue()); }
+    __expectedCall__.withOutputParameterReturning("out", out, __sizeof_out);
+    __expectedCall__.andReturnValue(__return__);
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& alarm_pool_add_repeating_timer_ms(alarm_pool_t * pool, size_t __sizeof_pool, CppUMockGen::Parameter<int32_t> delay_ms, CppUMockGen::Parameter<repeating_timer_callback_t> callback, CppUMockGen::Parameter<void *> user_data, repeating_timer_t * out, size_t __sizeof_out, _Bool __return__)
+{
+    return alarm_pool_add_repeating_timer_ms(1, pool, __sizeof_pool, delay_ms, callback, user_data, out, __sizeof_out, __return__);
+}
+MockExpectedCall& alarm_pool_add_repeating_timer_ms(unsigned int __numCalls__, alarm_pool_t * pool, size_t __sizeof_pool, CppUMockGen::Parameter<int32_t> delay_ms, CppUMockGen::Parameter<repeating_timer_callback_t> callback, CppUMockGen::Parameter<void *> user_data, repeating_timer_t * out, size_t __sizeof_out, _Bool __return__)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "alarm_pool_add_repeating_timer_ms");
+    __expectedCall__.withOutputParameterReturning("pool", pool, __sizeof_pool);
+    if(delay_ms.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withIntParameter("delay_ms", delay_ms.getValue()); }
+    if(callback.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withPointerParameter("callback", callback.getValue()); }
+    if(user_data.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withPointerParameter("user_data", user_data.getValue()); }
+    __expectedCall__.withOutputParameterReturning("out", out, __sizeof_out);
+    __expectedCall__.andReturnValue(__return__);
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& add_repeating_timer_us(CppUMockGen::Parameter<int64_t> delay_us, CppUMockGen::Parameter<repeating_timer_callback_t> callback, CppUMockGen::Parameter<void *> user_data, repeating_timer_t * out, size_t __sizeof_out, _Bool __return__)
+{
+    return add_repeating_timer_us(1, delay_us, callback, user_data, out, __sizeof_out, __return__);
+}
+MockExpectedCall& add_repeating_timer_us(unsigned int __numCalls__, CppUMockGen::Parameter<int64_t> delay_us, CppUMockGen::Parameter<repeating_timer_callback_t> callback, CppUMockGen::Parameter<void *> user_data, repeating_timer_t * out, size_t __sizeof_out, _Bool __return__)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "add_repeating_timer_us");
+    if(delay_us.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withLongIntParameter("delay_us", delay_us.getValue()); }
+    if(callback.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withPointerParameter("callback", callback.getValue()); }
+    if(user_data.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withPointerParameter("user_data", user_data.getValue()); }
+    __expectedCall__.withOutputParameterReturning("out", out, __sizeof_out);
+    __expectedCall__.andReturnValue(__return__);
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& add_repeating_timer_ms(CppUMockGen::Parameter<int32_t> delay_ms, CppUMockGen::Parameter<repeating_timer_callback_t> callback, CppUMockGen::Parameter<void *> user_data, repeating_timer_t * out, size_t __sizeof_out, _Bool __return__)
+{
+    return add_repeating_timer_ms(1, delay_ms, callback, user_data, out, __sizeof_out, __return__);
+}
+MockExpectedCall& add_repeating_timer_ms(unsigned int __numCalls__, CppUMockGen::Parameter<int32_t> delay_ms, CppUMockGen::Parameter<repeating_timer_callback_t> callback, CppUMockGen::Parameter<void *> user_data, repeating_timer_t * out, size_t __sizeof_out, _Bool __return__)
+{
+    bool __ignoreOtherParams__ = false;
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "add_repeating_timer_ms");
+    if(delay_ms.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withIntParameter("delay_ms", delay_ms.getValue()); }
+    if(callback.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withPointerParameter("callback", callback.getValue()); }
+    if(user_data.isIgnored()) { __ignoreOtherParams__ = true; } else { __expectedCall__.withPointerParameter("user_data", user_data.getValue()); }
+    __expectedCall__.withOutputParameterReturning("out", out, __sizeof_out);
+    __expectedCall__.andReturnValue(__return__);
+    if(__ignoreOtherParams__) { __expectedCall__.ignoreOtherParameters(); }
+    return __expectedCall__;
+}
+}
+
+namespace expect {
+MockExpectedCall& cancel_repeating_timer(repeating_timer_t * timer, size_t __sizeof_timer, _Bool __return__)
+{
+    return cancel_repeating_timer(1, timer, __sizeof_timer, __return__);
+}
+MockExpectedCall& cancel_repeating_timer(unsigned int __numCalls__, repeating_timer_t * timer, size_t __sizeof_timer, _Bool __return__)
+{
+    MockExpectedCall& __expectedCall__ = mock().expectNCalls(__numCalls__, "cancel_repeating_timer");
+    __expectedCall__.withOutputParameterReturning("timer", timer, __sizeof_timer);
+    __expectedCall__.andReturnValue(__return__);
+    return __expectedCall__;
+}
+}
+

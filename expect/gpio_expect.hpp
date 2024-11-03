@@ -13,63 +13,8 @@ extern "C" {
 #include <CppUTestExt/MockSupport.h>
 
 namespace expect {
-MockExpectedCall& gpio_set_function(CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<enum gpio_function> fn);
-MockExpectedCall& gpio_set_function(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<enum gpio_function> fn);
-}
-
-namespace expect {
-MockExpectedCall& gpio_get_function(CppUMockGen::Parameter<uint> gpio, enum gpio_function __return__);
-MockExpectedCall& gpio_get_function(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, enum gpio_function __return__);
-}
-
-namespace expect {
-MockExpectedCall& gpio_pull_up(CppUMockGen::Parameter<uint> gpio);
-MockExpectedCall& gpio_pull_up(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio);
-}
-
-namespace expect {
-MockExpectedCall& gpio_pull_down(CppUMockGen::Parameter<uint> gpio);
-MockExpectedCall& gpio_pull_down(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio);
-}
-
-namespace expect {
-MockExpectedCall& gpio_disable_pulls(CppUMockGen::Parameter<uint> gpio);
-MockExpectedCall& gpio_disable_pulls(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio);
-}
-
-namespace expect {
-MockExpectedCall& gpio_set_pulls(CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<_Bool> up, CppUMockGen::Parameter<_Bool> down);
-MockExpectedCall& gpio_set_pulls(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<_Bool> up, CppUMockGen::Parameter<_Bool> down);
-}
-
-namespace expect {
-MockExpectedCall& gpio_set_irqover(CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<uint> value);
-MockExpectedCall& gpio_set_irqover(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<uint> value);
-}
-
-namespace expect {
-MockExpectedCall& gpio_set_outover(CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<uint> value);
-MockExpectedCall& gpio_set_outover(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<uint> value);
-}
-
-namespace expect {
-MockExpectedCall& gpio_set_inover(CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<uint> value);
-MockExpectedCall& gpio_set_inover(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<uint> value);
-}
-
-namespace expect {
-MockExpectedCall& gpio_set_oeover(CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<uint> value);
-MockExpectedCall& gpio_set_oeover(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<uint> value);
-}
-
-namespace expect {
-MockExpectedCall& gpio_set_input_enabled(CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<_Bool> enable);
-MockExpectedCall& gpio_set_input_enabled(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<_Bool> enable);
-}
-
-namespace expect {
-MockExpectedCall& gpio_set_input_hysteresis_enabled(CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<_Bool> enabled);
-MockExpectedCall& gpio_set_input_hysteresis_enabled(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<_Bool> enabled);
+MockExpectedCall& gpio_get(CppUMockGen::Parameter<uint> gpio, _Bool __return__);
+MockExpectedCall& gpio_get(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, _Bool __return__);
 }
 
 namespace expect {
@@ -78,8 +23,13 @@ MockExpectedCall& gpio_is_input_hysteresis_enabled(unsigned int __numCalls__, Cp
 }
 
 namespace expect {
-MockExpectedCall& gpio_set_slew_rate(CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<enum gpio_slew_rate> slew);
-MockExpectedCall& gpio_set_slew_rate(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<enum gpio_slew_rate> slew);
+MockExpectedCall& gpio_get_drive_strength(CppUMockGen::Parameter<uint> gpio, enum gpio_drive_strength __return__);
+MockExpectedCall& gpio_get_drive_strength(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, enum gpio_drive_strength __return__);
+}
+
+namespace expect {
+MockExpectedCall& gpio_get_function(CppUMockGen::Parameter<uint> gpio, enum gpio_function __return__);
+MockExpectedCall& gpio_get_function(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, enum gpio_function __return__);
 }
 
 namespace expect {
@@ -88,13 +38,23 @@ MockExpectedCall& gpio_get_slew_rate(unsigned int __numCalls__, CppUMockGen::Par
 }
 
 namespace expect {
-MockExpectedCall& gpio_set_drive_strength(CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<enum gpio_drive_strength> drive);
-MockExpectedCall& gpio_set_drive_strength(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<enum gpio_drive_strength> drive);
+MockExpectedCall& gpio_get_all(uint32_t __return__);
+MockExpectedCall& gpio_get_all(unsigned int __numCalls__, uint32_t __return__);
 }
 
 namespace expect {
-MockExpectedCall& gpio_get_drive_strength(CppUMockGen::Parameter<uint> gpio, enum gpio_drive_strength __return__);
-MockExpectedCall& gpio_get_drive_strength(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, enum gpio_drive_strength __return__);
+MockExpectedCall& gpio_clr_mask(CppUMockGen::Parameter<uint32_t> mask);
+MockExpectedCall& gpio_clr_mask(unsigned int __numCalls__, CppUMockGen::Parameter<uint32_t> mask);
+}
+
+namespace expect {
+MockExpectedCall& gpio_debug_pins_init();
+MockExpectedCall& gpio_debug_pins_init(unsigned int __numCalls__);
+}
+
+namespace expect {
+MockExpectedCall& gpio_disable_pulls(CppUMockGen::Parameter<uint> gpio);
+MockExpectedCall& gpio_disable_pulls(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio);
 }
 
 namespace expect {
@@ -108,38 +68,13 @@ MockExpectedCall& gpio_init_mask(unsigned int __numCalls__, CppUMockGen::Paramet
 }
 
 namespace expect {
-MockExpectedCall& gpio_get(CppUMockGen::Parameter<uint> gpio, _Bool __return__);
-MockExpectedCall& gpio_get(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, _Bool __return__);
+MockExpectedCall& gpio_pull_down(CppUMockGen::Parameter<uint> gpio);
+MockExpectedCall& gpio_pull_down(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio);
 }
 
 namespace expect {
-MockExpectedCall& gpio_get_all(uint32_t __return__);
-MockExpectedCall& gpio_get_all(unsigned int __numCalls__, uint32_t __return__);
-}
-
-namespace expect {
-MockExpectedCall& gpio_set_mask(CppUMockGen::Parameter<uint32_t> mask);
-MockExpectedCall& gpio_set_mask(unsigned int __numCalls__, CppUMockGen::Parameter<uint32_t> mask);
-}
-
-namespace expect {
-MockExpectedCall& gpio_clr_mask(CppUMockGen::Parameter<uint32_t> mask);
-MockExpectedCall& gpio_clr_mask(unsigned int __numCalls__, CppUMockGen::Parameter<uint32_t> mask);
-}
-
-namespace expect {
-MockExpectedCall& gpio_xor_mask(CppUMockGen::Parameter<uint32_t> mask);
-MockExpectedCall& gpio_xor_mask(unsigned int __numCalls__, CppUMockGen::Parameter<uint32_t> mask);
-}
-
-namespace expect {
-MockExpectedCall& gpio_put_masked(CppUMockGen::Parameter<uint32_t> mask, CppUMockGen::Parameter<uint32_t> value);
-MockExpectedCall& gpio_put_masked(unsigned int __numCalls__, CppUMockGen::Parameter<uint32_t> mask, CppUMockGen::Parameter<uint32_t> value);
-}
-
-namespace expect {
-MockExpectedCall& gpio_put_all(CppUMockGen::Parameter<uint32_t> value);
-MockExpectedCall& gpio_put_all(unsigned int __numCalls__, CppUMockGen::Parameter<uint32_t> value);
+MockExpectedCall& gpio_pull_up(CppUMockGen::Parameter<uint> gpio);
+MockExpectedCall& gpio_pull_up(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio);
 }
 
 namespace expect {
@@ -148,8 +83,23 @@ MockExpectedCall& gpio_put(unsigned int __numCalls__, CppUMockGen::Parameter<uin
 }
 
 namespace expect {
-MockExpectedCall& gpio_set_dir_out_masked(CppUMockGen::Parameter<uint32_t> mask);
-MockExpectedCall& gpio_set_dir_out_masked(unsigned int __numCalls__, CppUMockGen::Parameter<uint32_t> mask);
+MockExpectedCall& gpio_put_all(CppUMockGen::Parameter<uint32_t> value);
+MockExpectedCall& gpio_put_all(unsigned int __numCalls__, CppUMockGen::Parameter<uint32_t> value);
+}
+
+namespace expect {
+MockExpectedCall& gpio_put_masked(CppUMockGen::Parameter<uint32_t> mask, CppUMockGen::Parameter<uint32_t> value);
+MockExpectedCall& gpio_put_masked(unsigned int __numCalls__, CppUMockGen::Parameter<uint32_t> mask, CppUMockGen::Parameter<uint32_t> value);
+}
+
+namespace expect {
+MockExpectedCall& gpio_set_dir(CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<_Bool> out);
+MockExpectedCall& gpio_set_dir(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<_Bool> out);
+}
+
+namespace expect {
+MockExpectedCall& gpio_set_dir_all_bits(CppUMockGen::Parameter<uint32_t> value);
+MockExpectedCall& gpio_set_dir_all_bits(unsigned int __numCalls__, CppUMockGen::Parameter<uint32_t> value);
 }
 
 namespace expect {
@@ -163,17 +113,77 @@ MockExpectedCall& gpio_set_dir_masked(unsigned int __numCalls__, CppUMockGen::Pa
 }
 
 namespace expect {
-MockExpectedCall& gpio_set_dir_all_bits(CppUMockGen::Parameter<uint32_t> value);
-MockExpectedCall& gpio_set_dir_all_bits(unsigned int __numCalls__, CppUMockGen::Parameter<uint32_t> value);
+MockExpectedCall& gpio_set_dir_out_masked(CppUMockGen::Parameter<uint32_t> mask);
+MockExpectedCall& gpio_set_dir_out_masked(unsigned int __numCalls__, CppUMockGen::Parameter<uint32_t> mask);
 }
 
 namespace expect {
-MockExpectedCall& gpio_set_dir(CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<_Bool> out);
-MockExpectedCall& gpio_set_dir(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<_Bool> out);
+MockExpectedCall& gpio_set_drive_strength(CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<enum gpio_drive_strength> drive);
+MockExpectedCall& gpio_set_drive_strength(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<enum gpio_drive_strength> drive);
 }
 
 namespace expect {
-MockExpectedCall& gpio_debug_pins_init();
-MockExpectedCall& gpio_debug_pins_init(unsigned int __numCalls__);
+MockExpectedCall& gpio_set_function(CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<enum gpio_function> fn);
+MockExpectedCall& gpio_set_function(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<enum gpio_function> fn);
+}
+
+namespace expect {
+MockExpectedCall& gpio_set_inover(CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<uint> value);
+MockExpectedCall& gpio_set_inover(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<uint> value);
+}
+
+namespace expect {
+MockExpectedCall& gpio_set_input_enabled(CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<_Bool> enable);
+MockExpectedCall& gpio_set_input_enabled(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<_Bool> enable);
+}
+
+namespace expect {
+MockExpectedCall& gpio_set_input_hysteresis_enabled(CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<_Bool> enabled);
+MockExpectedCall& gpio_set_input_hysteresis_enabled(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<_Bool> enabled);
+}
+
+namespace expect {
+MockExpectedCall& gpio_set_irq_enabled(CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<uint32_t> event_mask, CppUMockGen::Parameter<_Bool> enabled);
+MockExpectedCall& gpio_set_irq_enabled(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<uint32_t> event_mask, CppUMockGen::Parameter<_Bool> enabled);
+}
+
+namespace expect {
+MockExpectedCall& gpio_set_irq_enabled_with_callback(CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<uint32_t> event_mask, CppUMockGen::Parameter<_Bool> enabled, CppUMockGen::Parameter<gpio_irq_callback_t> callback);
+MockExpectedCall& gpio_set_irq_enabled_with_callback(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<uint32_t> event_mask, CppUMockGen::Parameter<_Bool> enabled, CppUMockGen::Parameter<gpio_irq_callback_t> callback);
+}
+
+namespace expect {
+MockExpectedCall& gpio_set_irqover(CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<uint> value);
+MockExpectedCall& gpio_set_irqover(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<uint> value);
+}
+
+namespace expect {
+MockExpectedCall& gpio_set_mask(CppUMockGen::Parameter<uint32_t> mask);
+MockExpectedCall& gpio_set_mask(unsigned int __numCalls__, CppUMockGen::Parameter<uint32_t> mask);
+}
+
+namespace expect {
+MockExpectedCall& gpio_set_oeover(CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<uint> value);
+MockExpectedCall& gpio_set_oeover(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<uint> value);
+}
+
+namespace expect {
+MockExpectedCall& gpio_set_outover(CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<uint> value);
+MockExpectedCall& gpio_set_outover(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<uint> value);
+}
+
+namespace expect {
+MockExpectedCall& gpio_set_pulls(CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<_Bool> up, CppUMockGen::Parameter<_Bool> down);
+MockExpectedCall& gpio_set_pulls(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<_Bool> up, CppUMockGen::Parameter<_Bool> down);
+}
+
+namespace expect {
+MockExpectedCall& gpio_set_slew_rate(CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<enum gpio_slew_rate> slew);
+MockExpectedCall& gpio_set_slew_rate(unsigned int __numCalls__, CppUMockGen::Parameter<uint> gpio, CppUMockGen::Parameter<enum gpio_slew_rate> slew);
+}
+
+namespace expect {
+MockExpectedCall& gpio_xor_mask(CppUMockGen::Parameter<uint32_t> mask);
+MockExpectedCall& gpio_xor_mask(unsigned int __numCalls__, CppUMockGen::Parameter<uint32_t> mask);
 }
 
